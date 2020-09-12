@@ -2,7 +2,7 @@ var films;
 
 $(document).ready(function () {
     $("#search-film").keyup(function () {
-        getFilmsByTitle(this.value); //volvio
+        getFilmsByTitle(this.value);
     });
 
     $("#orderBy").click(function () {
@@ -18,19 +18,6 @@ $(document).ready(function () {
         );
     });
 
-    /*
-    $("#showAll").click(function () {
-        $('#noFilmResult').remove();
-
-        getFilmsByTitle(
-            $("#searchingFilm").val(),
-            $(this).attr('order')
-        );
-
-        $('#filmList').show();
-    });*/
-
-
     $("#yearFilms").change(function () {
         getFilmsByYear(
             $(this).val()
@@ -43,7 +30,7 @@ $(document).ready(function () {
 function getFilmsByTitle(title, orderBy = 'DESC')
 {
     $.ajax({
-        url: "/api/films/title/" + title, //no hay que indicar en la funcion del api, de donde viene?
+        url: "/api/films/title/" + title,
         type: "GET",
         dataType: 'json',
         data: {
@@ -87,17 +74,9 @@ function getAllFilms()
     });
 }
 
-/*
-1- Crear nuevo endpoint / ruta /api/films
-2- Crear nuevo controller con /api/films
-3- Este Controller llama al repositorio y obtiene todas films
-4- Devuelve un json de todas las films en bd
- */
-
 function renderFilmTableInformation(request)
 {
     $("#filmListContent").empty();
-
     $.each(request, function (index, film) {
         $('#filmListContent').append('<tr><th>' + film.id + '</th>' + '<td>' + film.title + '</td><td>' + film.year + '</td></tr>');
     });
