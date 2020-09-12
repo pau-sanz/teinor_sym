@@ -1,3 +1,34 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+    methods: [GET]
+
+films:
+    path: /films
+    controller: App\Controller\FilmsController::films
+    methods: [ GET ]
+
+api_films_title:
+    path: /api/films/title/{title}
+    controller: App\Controller\FilmsByTitleApiController::films
+    methods: [ GET ]
+
+api_films_year:
+    path: /api/films/year/{year}
+    controller: App\Controller\FilmsByYearApiController::films
+    methods: [ GET ]
+
+api_films:
+    path: /api/films
+    controller: App\Controller\FilmsApiController::films
+    methods: [ GET ]
+
+films_create:
+    path: /films/create
+    controller: App\Controller\FilmsCreateController::filmsCreate
+    methods: [ GET ]
+
+films_add:
+    path: /films/create
+    controller: App\Controller\FilmsCreatePostController::filmsCreate
+    methods: [ POST ]

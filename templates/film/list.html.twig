@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for msg in app.session.flashBag.get('success') %}
+        <div class="alert alert-success">
+            {{ msg }}
+        </div>
+    {% endfor %}
+
+    <div>
+        <form class="form-inline styleFormSearchContent">
+            <input id="search-film" class="form-control mr-sm-2 style-search-field" type="search" placeholder="Search" aria-label="Search">
+            <select class="form-control" name="yearFilms" id="yearFilms"></select>
+            <button id="orderBy" class="form-control" name="yearFims"order="ASC">Order by Year</button>
+        </form>
+    </div>
+
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Year</th>
+        </tr>
+        </thead>
+        <tbody id="filmListContent"></tbody>
+    </table>
+<script>
+    window.onload = function() {
+        getAllFilms();
+    };
+</script>
+{% endblock %}
