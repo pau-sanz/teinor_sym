@@ -186,6 +186,8 @@
       <updated>1599837801936</updated>
       <workItem from="1599837805293" duration="6206000" />
       <workItem from="1599921230630" duration="15903000" />
+      <workItem from="1599988091690" duration="2564000" />
+      <workItem from="1599991858337" duration="1400000" />
     </task>
     <servers />
   </component>
@@ -202,6 +204,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="566" y="93" key="#PHP" timestamp="1599921599423">

@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1>Add Film</h1>
-        <input id="add" name="addFilm" type="submit" value="Add" class="btn btn-primary" />
+        <input id="add" name="addFilm" type="submit" value="Add" class="btn btn-secondary" />
         <form id="sendFilm" role="form" action="/films/create" method="POST" style="display: none;">
             <div class="form-group">
                 <label for="titleFilm">Title</label>
@@ -12,7 +12,7 @@
                 <label for="yearFilm">Year</label>
                 <input type="text" class="form-control" name="yearFilm" id="yearFilm">
             </div>
-            <button name="sendFilm" type="submit" class="btn btn-primary">Send</button>
+            <button name="sendFilm" type="submit" class="btn btn-secondary">Send</button>
         </form>
 
 {% endblock %}

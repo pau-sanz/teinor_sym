@@ -5,19 +5,6 @@ $(document).ready(function () {
         getFilmsByTitle(this.value);
     });
 
-    $("#orderBy").click(function () {
-        if ($(this).attr('order') === 'ASC') {
-            $(this).attr('order', 'DESC');
-        } else {
-            $(this).attr('order', 'ASC');
-        }
-
-        getFilmsByTitle(
-            $("#searchingFilm").val(),
-            $(this).attr('order')
-        );
-    });
-
     $("#yearFilms").change(function () {
         getFilmsByYear(
             $(this).val()
@@ -61,13 +48,11 @@ function getFilmsByYear(year)
 
 function getAllFilms()
 {
-    console.log('getAllFilms');
     $.ajax({
         url: "/api/films",
         type: "GET",
         dataType: 'json',
         success: function (request) {
-            console.log('doing ajax');
             renderFilmTableInformation(request);
         }
 
